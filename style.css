@@ -1,0 +1,41 @@
+:root {
+  --bg: #f5f5f5;
+  --fg: #222;
+  --muted: #777;
+  --card: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --fg: #eee;
+    --muted: #999;
+    --card: #1c1c1c;
+  }
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+}
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0 24px;
+}
+/* 안내문 이미지: 화면 폭에 맞춤, 핀치 줌 가능 */
+.notice img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.notice img + img { margin-top: 0; }
+.pending {
+  display: none;
+  margin: 40vh 16px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+.pending.show { display: block; }
