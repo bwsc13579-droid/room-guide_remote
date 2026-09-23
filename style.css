@@ -1,41 +1,92 @@
+/* 객실 안내 QR 페이지 공통 스타일 (room-guide_channel, room-guide_remote 에 같은 파일) */
 :root {
-  --bg: #f5f5f5;
-  --fg: #222;
-  --muted: #777;
-  --card: #fff;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111;
-    --fg: #eee;
-    --muted: #999;
-    --card: #1c1c1c;
-  }
+  --blue: #1E4B8F;        /* 베이스 블루 (임시값, 조식쿠폰 색으로 교체) */
+  --blue-press: #163A6E;
+  --blue-tint: #E3EAF5;   /* 외곽선 버튼 눌림 배경 */
+  --bg: #F5F7FA;
+  --card: #FFFFFF;
+  --text: #1A2433;
+  --text-sub: #556070;
+  --line: #DCE2EA;
+  --head-sub: #C9D6EA;
+  --head-desc: #DCE6F5;
+  --viewer-bg: #0E1A2B;
+  --viewer-line: #5B7196;
 }
 * { box-sizing: border-box; }
-html, body {
+html { scroll-behavior: smooth; }
+body {
   margin: 0;
   background: var(--bg);
-  color: var(--fg);
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  color: var(--text);
+  font-family: "Noto Sans KR", sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 0 24px;
+.page { max-width: 480px; margin: 0 auto; }
+svg.icon { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 머리말 */
+.head { background: var(--blue); color: #fff; padding: 44px 20px 32px; }
+.head.has-jump { padding-bottom: 64px; }
+.head .eyebrow { font: 500 12px "Noto Sans KR", sans-serif; letter-spacing: .14em; color: var(--head-sub); }
+.head h1 { margin: 10px 0 8px; font: 700 28px/1.3 "Noto Serif KR", serif; letter-spacing: -.01em; }
+.head p { margin: 0; font: 400 15px/1.6 "Noto Sans KR", sans-serif; color: var(--head-desc); text-wrap: pretty; }
+
+/* 버튼 3종 공통 */
+.btn {
+  height: 52px;
+  display: flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--blue); border-radius: 12px;
+  font: 700 16px "Noto Sans KR", sans-serif;
+  text-decoration: none; cursor: pointer;
+  transition: background .12s;
 }
-/* 안내문 이미지: 화면 폭에 맞춤, 핀치 줌 가능 */
-.notice img {
-  display: block;
-  width: 100%;
-  height: auto;
+.btn-outline { background: var(--card); color: var(--blue); }
+.btn-outline:active { background: var(--blue-tint); border-color: var(--blue-press); color: var(--blue-press); }
+.btn-fill { width: 100%; justify-content: center; background: var(--blue); color: #fff; }
+.btn-fill:active { background: var(--blue-press); border-color: var(--blue-press); }
+
+/* 바로가기 묶음 */
+.jump {
+  margin: -40px 12px 0; padding: 12px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(20,40,80,.08);
+  display: flex; flex-direction: column; gap: 8px;
 }
-.notice img + img { margin-top: 0; }
+.jump-label { font: 500 13px "Noto Sans KR", sans-serif; color: var(--text-sub); padding: 2px 4px 4px; }
+.jump .btn { gap: 12px; padding: 0 16px; }
+.jump .no { font: 700 13px "Noto Sans KR", sans-serif; opacity: .7; }
+.jump .title { flex: 1; }
+
+/* 안내 섹션 */
+.guides { padding: 28px 0 8px; display: flex; flex-direction: column; gap: 32px; }
+.guides.single { padding-top: 24px; }
+.guide { display: flex; flex-direction: column; gap: 12px; scroll-margin-top: 12px; }
+.guide-head { display: flex; align-items: center; gap: 10px; padding: 0 20px; }
+.badge { font: 700 13px "Noto Sans KR", sans-serif; color: #fff; background: var(--blue); border-radius: 6px; padding: 3px 8px; }
+.guide-head h2 { margin: 0; font: 700 20px "Noto Serif KR", serif; color: var(--text); }
+.card { margin: 0 8px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 6px; }
+.card img { display: block; width: 100%; height: auto; border-radius: 8px; }
 .pending {
-  display: none;
-  margin: 40vh 16px 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 16px;
+  aspect-ratio: 3 / 4; border-radius: 8px;
+  background: repeating-linear-gradient(135deg, #F1F4F8 0 10px, #E7ECF2 10px 20px);
+  display: flex; align-items: center; justify-content: center;
+  font: 500 14px "Noto Sans KR", sans-serif; color: var(--text-sub);
 }
-.pending.show { display: block; }
+.guide-action { padding: 0 8px; }
+
+/* 바닥글 */
+.foot { margin-top: 24px; padding: 24px 20px 40px; border-top: 1px solid var(--line); display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.foot .btn { height: 48px; padding: 0 24px; }
+.foot p { margin: 0; font: 400 14px/1.6 "Noto Sans KR", sans-serif; color: var(--text-sub); text-align: center; }
+.foot .ext { font-weight: 700; color: var(--text); }
+
+/* 크게 보기 뷰어 */
+.viewer { position: fixed; inset: 0; z-index: 10; background: var(--viewer-bg); display: flex; flex-direction: column; }
+.viewer[hidden] { display: none; }
+.viewer-bar { height: 64px; flex: none; display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 20px; color: #fff; font: 700 16px "Noto Sans KR", sans-serif; }
+.viewer-close { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: transparent; border: 1.5px solid var(--viewer-line); border-radius: 12px; color: #fff; cursor: pointer; }
+.viewer-close:active { background: var(--blue); }
+.viewer-body { flex: 1; overflow: auto; display: flex; align-items: center; justify-content: center; touch-action: pinch-zoom pan-x pan-y; }
+.viewer-body img { display: block; max-width: 100%; max-height: 100%; }
+body.viewer-open { overflow: hidden; }
