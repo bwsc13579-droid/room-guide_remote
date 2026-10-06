@@ -24,6 +24,8 @@
       var src = el.dataset["src" + (lang === "en" ? "En" : "Ko")];
       if (el.tagName === "IMG") {
         if (el.getAttribute("src") !== src) el.src = src;
+        var size = el.dataset["size" + (lang === "en" ? "En" : "Ko")]; // 예: "941x1672" (한글판과 크기가 다를 때)
+        if (size) { el.width = size.split("x")[0]; el.height = size.split("x")[1]; }
         if (el.dataset["alt" + (lang === "en" ? "En" : "Ko")]) el.alt = el.dataset["alt" + (lang === "en" ? "En" : "Ko")];
       } else {
         el.dataset.src = src;
