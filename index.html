@@ -1,61 +1,67 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>객실 사용 설명서</title>
+  <title data-ko="객실 사용 설명서" data-en="Room User Guide">객실 사용 설명서</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap">
   <link rel="stylesheet" href="style.css">
+  <script>try{var q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("room-guide-lang"),l=q==="en"||q==="ko"?q:s;if(l==="en"||l==="ko")document.documentElement.setAttribute("data-lang",l)}catch(e){}</script>
 </head>
 <body>
   <div class="page" id="top">
     <header class="head has-jump">
+      <div class="lang" role="group" aria-label="언어 / Language">
+        <button type="button" data-lang="ko" aria-pressed="true">KR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
       <div class="eyebrow">HOTEL SOKCHO · ROOM GUIDE</div>
-      <h1>객실 사용 설명서</h1>
-      <p>TV, 에어컨, 난방·조명을 사용하는 방법을 안내해 드립니다.</p>
+      <h1><span class="ko">객실 사용 설명서</span><span class="en">Room User Guide</span></h1>
+      <p><span class="ko">TV, 에어컨, 난방·조명을 사용하는 방법을 안내해 드립니다.</span><span class="en">How to use the TV, air conditioner, heating and lighting in your room.</span></p>
     </header>
 
-    <nav class="jump" aria-label="바로가기">
-      <div class="jump-label">바로가기</div>
-      <a class="btn btn-outline" href="#tv"><span class="no">01</span><span class="title">TV 리모컨</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-      <a class="btn btn-outline" href="#aircon"><span class="no">02</span><span class="title">에어컨 리모컨</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
-      <a class="btn btn-outline" href="#heating"><span class="no">03</span><span class="title">난방·조명 패널</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+    <nav class="jump" data-label-ko="바로가기" data-label-en="Quick links" aria-label="바로가기">
+      <div class="jump-label"><span class="ko">바로가기</span><span class="en">Quick links</span></div>
+      <a class="btn btn-outline" href="#tv"><span class="no">01</span><span class="title"><span class="ko">TV 리모컨</span><span class="en">TV Remote</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <a class="btn btn-outline" href="#aircon"><span class="no">02</span><span class="title"><span class="ko">에어컨 리모컨</span><span class="en">Air Conditioner Remote</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+      <a class="btn btn-outline" href="#heating"><span class="no">03</span><span class="title"><span class="ko">난방·조명 패널</span><span class="en">Heating & Lighting Panel</span></span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
     </nav>
 
     <!-- 이미지를 교체하려면 images/ 안의 같은 이름 파일만 바꾸면 됩니다. 크기가 바뀌면 width/height 값도 맞춰 주세요. -->
     <main class="guides">
       <article class="guide" id="tv">
-        <div class="guide-head"><span class="badge">01</span><h2>TV 리모컨</h2></div>
-        <div class="card"><img src="images/tv.png" width="1199" height="1312" loading="lazy" alt="LG 헬로비전 TV 리모컨 사용 안내"></div>
-        <div class="guide-action"><a class="btn btn-fill" href="images/tv.png" data-src="images/tv.png" data-title="TV 리모컨"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg>크게 보기</a></div>
+        <div class="guide-head"><span class="badge">01</span><h2><span class="ko">TV 리모컨</span><span class="en">TV Remote</span></h2></div>
+        <div class="card"><img src="images/tv.png" data-src-ko="images/tv.png" data-src-en="images/tv-en.png" data-alt-ko="LG 헬로비전 TV 리모컨 사용 안내" data-alt-en="LG HelloVision TV remote guide" width="1199" height="1312" loading="lazy" alt="LG 헬로비전 TV 리모컨 사용 안내"></div>
+        <div class="guide-action"><a class="btn btn-fill" href="images/tv.png" data-src="images/tv.png" data-src-ko="images/tv.png" data-src-en="images/tv-en.png" data-title="TV 리모컨" data-title-ko="TV 리모컨" data-title-en="TV Remote"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg><span class="ko">크게 보기</span><span class="en">View larger</span></a></div>
       </article>
       <article class="guide" id="aircon">
-        <div class="guide-head"><span class="badge">02</span><h2>에어컨 리모컨</h2></div>
-        <div class="card"><img src="images/aircon.png" width="1672" height="941" loading="lazy" alt="삼성 에어컨 리모컨 사용 안내"></div>
-        <div class="guide-action"><a class="btn btn-fill" href="images/aircon.png" data-src="images/aircon.png" data-title="에어컨 리모컨"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg>크게 보기</a></div>
+        <div class="guide-head"><span class="badge">02</span><h2><span class="ko">에어컨 리모컨</span><span class="en">Air Conditioner Remote</span></h2></div>
+        <div class="card"><img src="images/aircon.png" data-src-ko="images/aircon.png" data-src-en="images/aircon-en.png" data-alt-ko="삼성 에어컨 리모컨 사용 안내" data-alt-en="Samsung air conditioner remote guide" width="1672" height="941" loading="lazy" alt="삼성 에어컨 리모컨 사용 안내"></div>
+        <div class="guide-action"><a class="btn btn-fill" href="images/aircon.png" data-src="images/aircon.png" data-src-ko="images/aircon.png" data-src-en="images/aircon-en.png" data-title="에어컨 리모컨" data-title-ko="에어컨 리모컨" data-title-en="Air Conditioner Remote"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg><span class="ko">크게 보기</span><span class="en">View larger</span></a></div>
       </article>
       <article class="guide" id="heating">
-        <div class="guide-head"><span class="badge">03</span><h2>난방·조명 패널</h2></div>
-        <div class="card"><img src="images/heating.png" width="1774" height="887" loading="lazy" alt="난방·조명 패널 사용 안내"></div>
-        <div class="guide-action"><a class="btn btn-fill" href="images/heating.png" data-src="images/heating.png" data-title="난방·조명 패널"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg>크게 보기</a></div>
+        <div class="guide-head"><span class="badge">03</span><h2><span class="ko">난방·조명 패널</span><span class="en">Heating & Lighting Panel</span></h2></div>
+        <div class="card"><img src="images/heating.png" data-src-ko="images/heating.png" data-src-en="images/heating-en.png" data-alt-ko="난방·조명 패널 사용 안내" data-alt-en="Heating and lighting panel guide" width="1774" height="887" loading="lazy" alt="난방·조명 패널 사용 안내"></div>
+        <div class="guide-action"><a class="btn btn-fill" href="images/heating.png" data-src="images/heating.png" data-src-ko="images/heating.png" data-src-en="images/heating-en.png" data-title="난방·조명 패널" data-title-ko="난방·조명 패널" data-title-en="Heating & Lighting Panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5M11 8v6M8 11h6"/></svg><span class="ko">크게 보기</span><span class="en">View larger</span></a></div>
       </article>
     </main>
 
     <footer class="foot">
-      <a class="btn btn-outline" href="#top"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>맨 위로</a>
-      <p>도움이 필요하시면 프론트로 연락해 주세요.<br><strong class="ext">내선 201#~203#</strong></p>
+      <a class="btn btn-outline" href="#top"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="ko">맨 위로</span><span class="en">Back to top</span></a>
+      <p><span class="ko">도움이 필요하시면 프론트로 연락해 주세요.</span><span class="en">If you need assistance, please contact the front desk.</span><br><strong class="ext"><span class="ko">내선 201#~203#</span><span class="en">Ext. 201#~203#</span></strong></p>
     </footer>
   </div>
 
   <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true">
     <div class="viewer-bar">
       <span class="viewer-title"></span>
-      <button class="viewer-close" type="button" aria-label="닫기"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <button class="viewer-close" type="button" data-label-ko="닫기" data-label-en="Close" aria-label="닫기"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
     <div class="viewer-body"><img alt=""></div>
   </div>
+  <script src="lang.js"></script>
   <script src="viewer.js"></script>
 </body>
 </html>
